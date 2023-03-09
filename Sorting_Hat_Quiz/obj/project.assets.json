@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/saraballew/Projects/Sorting_Hat_Quiz/Sorting-Hat-Quiz/Sorting_Hat_Quiz/Sorting_Hat_Quiz/Sorting_Hat_Quiz.csproj",
+      "projectUniqueName": "/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/Sorting_Hat_Quiz.csproj",
       "projectName": "Sorting_Hat_Quiz",
-      "projectPath": "/Users/saraballew/Projects/Sorting_Hat_Quiz/Sorting-Hat-Quiz/Sorting_Hat_Quiz/Sorting_Hat_Quiz/Sorting_Hat_Quiz.csproj",
+      "projectPath": "/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/Sorting_Hat_Quiz.csproj",
       "packagesPath": "/Users/saraballew/.nuget/packages/",
-      "outputPath": "/Users/saraballew/Projects/Sorting_Hat_Quiz/Sorting-Hat-Quiz/Sorting_Hat_Quiz/Sorting_Hat_Quiz/obj/",
+      "outputPath": "/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/saraballew/.nuget/NuGet/NuGet.Config"

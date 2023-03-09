@@ -1,0 +1,15 @@
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/bin/Debug/net7.0/Sorting_Hat_Quiz
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/bin/Debug/net7.0/Sorting_Hat_Quiz.deps.json
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/bin/Debug/net7.0/Sorting_Hat_Quiz.runtimeconfig.json
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/bin/Debug/net7.0/Sorting_Hat_Quiz.dll
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/bin/Debug/net7.0/Sorting_Hat_Quiz.pdb
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.csproj.AssemblyReference.cache
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.GeneratedMSBuildEditorConfig.editorconfig
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.AssemblyInfoInputs.cache
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.AssemblyInfo.cs
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.csproj.CoreCompileInputs.cache
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.dll
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/refint/Sorting_Hat_Quiz.dll
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.pdb
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.genruntimeconfig.cache
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/ref/Sorting_Hat_Quiz.dll
