@@ -13,3 +13,4 @@
 /Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.pdb
 /Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/Sorting_Hat_Quiz.genruntimeconfig.cache
 /Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/obj/Debug/net7.0/ref/Sorting_Hat_Quiz.dll
+/Users/saraballew/Projects/Sorting-Hat-Quiz/Sorting_Hat_Quiz/bin/Debug/net7.0/Assets/Question-Answer_Template.tsv

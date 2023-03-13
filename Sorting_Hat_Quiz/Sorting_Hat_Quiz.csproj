@@ -7,4 +7,23 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="BusinessLayer\" />
+    <None Remove="DataAccess\" />
+    <None Remove="CommonLayer\" />
+    <None Remove="Assets\" />
+    <None Remove="CommonLayer\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessLayer\" />
+    <Folder Include="DataAccess\" />
+    <Folder Include="CommonLayer\" />
+    <Folder Include="Assets\" />
+    <Folder Include="CommonLayer\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Assets\Question-Answer_Template.tsv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
