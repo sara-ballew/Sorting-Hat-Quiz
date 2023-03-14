@@ -64,7 +64,7 @@ class Program
         }
 
         // Calculate the house the user belongs to based on the variable (list) values stored in it.
-        var FinalHouseResult = userAnswers.GroupBy(ua => ua).OrderByDescending(c => c.Count()).FirstOrDefault();
+        var FinalHouseResult = userAnswers.GroupBy(ua => ua).OrderByDescending(c => c.Count()).Select(c => c.Key).FirstOrDefault();
         Console.WriteLine("Welcome to the family! You have been selected for house: " + FinalHouseResult.ToString());
         // If more than 1 match, then either use the first in alphabetical order or select a random one
         // Pull the right ASCII art for the result
