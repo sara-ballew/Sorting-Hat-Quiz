@@ -7,6 +7,10 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Questions:
+        // .NET Framework restrictions? Used .NET 7
+        // Ignore files in git VS Mac
+
         // Pull ASCII code for intro
         Console.WriteLine("Hello, and welcome to the Wizarding World!");
         Console.WriteLine("If at any point you would like to stop the Sorting Hat Quiz, say 'Nox'");
@@ -14,61 +18,95 @@ class Program
         // Create and interface and reference it here
         var Spreadsheet = new SpreadsheetDataAccess();
 
-        // Create a variable (list) that stores the results to calculate later
-        var userAnswers = new List<string>();
+        Spreadsheet.GetAsciiArt("Hogwarts");
 
         var Quiz = Spreadsheet.GetQuestions();
-        for(int i = 0; i< Quiz.Questions.Count(); i++) 
+        bool Retry = false;
+        do
         {
-            Console.WriteLine(Quiz.Questions[i].Question);
+            // Create a variable (list) that stores the results to calculate later
+            var userAnswers = new List<string>();
 
-            // Pull all the answers by id and order by alphabetical order
-            var Options = Quiz.Answers.Where(A => A.AnswerId == Quiz.Questions[i].QuestionId).OrderBy(A=>A.AnswerText);
-
-            // Assign a number to each answer to give the user as an input
-            foreach(var Option in Options)
+            for (int i = 0; i < Quiz.Questions.Count(); i++)
             {
-                // Display answers with number assigned. I.e. 1) Harry Potter
-                Console.WriteLine($"{(Options.ToList().IndexOf(Option)+1).ToString()}. {Option.AnswerText}");
+                Console.WriteLine(Quiz.Questions[i].Question);
+
+                // Pull all the answers by id and order by alphabetical order
+                var Options = Quiz.Answers.Where(A => A.AnswerId == Quiz.Questions[i].QuestionId).OrderBy(A => A.AnswerText);
+
+                // Assign a number to each answer to give the user as an input
+                foreach (var Option in Options)
+                {
+                    // Display answers with number assigned. I.e. 1) Harry Potter
+                    Console.WriteLine($"{(Options.ToList().IndexOf(Option) + 1).ToString()}. {Option.AnswerText}");
+                }
+
+                bool ValidAnswer;
+                do
+                {
+                    // Read user input and validate it's correct (no other input should be allowed)
+                    Console.WriteLine("Please select the number corresponding to your preferred answer: ");
+                    var Input = Console.ReadLine();
+                    var intinput = 0;
+                    int.TryParse(Input, out intinput);
+
+                    // Compare user input and store in created variable (list)
+                    switch (intinput)
+                    {
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                            ValidAnswer = true;
+                            userAnswers.Add(Options.ElementAt(intinput - 1).AnswerHouse);
+                            break;
+                        default:
+                            if (Input.ToLower() == "nox")
+                            {
+                                return;
+                            }
+                            ValidAnswer = false;
+                            Console.WriteLine("Sorry! That isn't valid input! Input must be a number between 1 and 4.");
+                            break;
+                    }
+                } while (ValidAnswer == false);
+
             }
 
-            bool ValidAnswer;
+            // Calculate the house the user belongs to based on the variable (list) values stored in it.
+            var FinalHouseResult = userAnswers.GroupBy(ua => ua).OrderByDescending(c => c.Count()).Select(c => c.Key).FirstOrDefault();
+            Console.WriteLine("Welcome to the family! You have been selected for house: " + FinalHouseResult.ToString());
+            Spreadsheet.GetAsciiArt(FinalHouseResult.ToString());
+
+            // If more than 1 match, then either use the first in alphabetical order or select a random one
+            // Pull the right ASCII art for the result
+
+            bool RetryFlag = false;
             do
             {
-                // Read user input and validate it's correct (no other input should be allowed)
-                Console.WriteLine("Please select the number corresponding to your preferred answer: ");
-                var Input = Console.ReadLine();
-                var intinput = 0;
-                int.TryParse(Input, out intinput);
 
-                // Compare user input and store in created variable (list)
-                switch (intinput)
+                // Allow to try again
+
+                Console.WriteLine("Would you like to try again? Y/N");
+                var RetryResponse = Console.ReadLine();
+                switch (RetryResponse.ToUpper())
                 {
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                        ValidAnswer = true;
-                        userAnswers.Add(Options.ElementAt(intinput-1).AnswerHouse);
+                    case "Y":
+                        Retry = true;
+                        RetryFlag = false;
                         break;
+                    case "N":
+                        Retry = false;
+                        RetryFlag = false;
+                        break;
+                    case "NOX":
+                        return;
                     default:
-                        if (Input.ToLower() == "nox")
-                        {
-                            return;
-                        }
-                        ValidAnswer = false;
-                        Console.WriteLine("Sorry! That isn't valid input! Input must be a number between 1 and 4.");
+                        RetryFlag = true;
                         break;
                 }
-            } while (ValidAnswer == false);
-        }
+            } while (RetryFlag == true);
 
-        // Calculate the house the user belongs to based on the variable (list) values stored in it.
-        var FinalHouseResult = userAnswers.GroupBy(ua => ua).OrderByDescending(c => c.Count()).Select(c => c.Key).FirstOrDefault();
-        Console.WriteLine("Welcome to the family! You have been selected for house: " + FinalHouseResult.ToString());
-        // If more than 1 match, then either use the first in alphabetical order or select a random one
-        // Pull the right ASCII art for the result
-        // Allow to try again
-    }
+        } while (Retry == true);
 }
-
+}

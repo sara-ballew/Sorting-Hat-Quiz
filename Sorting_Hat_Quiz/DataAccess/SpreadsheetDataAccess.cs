@@ -57,6 +57,28 @@ namespace Sorting_Hat_Quiz.DataAccess
 
             return Response;
         }
+
+        
+        // Make GetAsciiArt receive a string
+        // Make that string define which ascii file to pull
+        // Call GetAsciiArt after the welcome with the hogwarts logo and after the results with the house logo
+        public void GetAsciiArt(string fileName)
+        {
+            // Need to find the file in the solution, and that may change depending on the computer the project is loaded
+            // so, reading the folder of the project rather than hard coding it should help with that
+            var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var file = Path.Combine(projectFolder, @$"Assets/{fileName}.txt"); 
+
+            // I found the StreamReader class and how to use it, but may need to fully understand "using"
+            using (StreamReader reader = new StreamReader(file))
+            {
+                while (!reader.EndOfStream) // Looping until the end of the stream (file)
+                {
+                    string line = reader.ReadLine();
+                    Console.WriteLine(line);
+                }
+            }
+        }
     }
 }
 
