@@ -7,9 +7,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Questions:
-        // .NET Framework restrictions? Used .NET 7
-        // Ignore files in git VS Mac
 
         // Pull ASCII code for intro
         Console.WriteLine("Hello, and welcome to the Wizarding World!");
@@ -69,6 +66,7 @@ class Program
                             Console.WriteLine("Sorry! That isn't valid input! Input must be a number between 1 and 4.");
                             break;
                     }
+                    Console.Clear();
                 } while (ValidAnswer == false);
 
             }
